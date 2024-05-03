@@ -1,0 +1,359 @@
+@font-face {
+    font-family: roleModel;
+    src: url(fonts/rolemodel.otf);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: url('images/try8.svg'), auto;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.cursor{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: radial-gradient(rgba(252,194,61,1), rgba(252,194,61,0));
+    opacity: .6;
+    transition-duration: 200ms;
+    transition-timing-function: all ease-out;
+    z-index: 1;
+}
+.expand{
+    animation: cursorClick .5s forwards;
+    background-image: radial-gradient(rgba(252,194,61,1), rgba(252,194,61,.5));
+    /* border: 1px solid #fcc23d; */
+  }
+  
+  @keyframes cursorClick {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50%{
+      transform: scale(3.5);
+    }
+    100%{
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+.nav{
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .6s ease-in-out;
+    z-index: 2;
+}
+/* .nav.sticky{
+    background: #000;
+} */
+.nav .navBar{
+    padding: 0;
+    width: 95%;
+    height: 90%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .navBar .logo{
+    width: 120px;
+}
+.nav .navBar .logo:hover{
+    cursor: url('images/try8.svg'), auto;
+}
+.nav .navBar .navMenu{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+.nav .navBar .navMenu .listItem a{
+    color: #FFFFF7;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1em;
+    user-select: none;
+}
+.nav .navBar .navMenu .listItem a::after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    left: 50%;
+    background: #FFFFF7;
+    height: 2px;
+    transition: .2s ease-in-out;
+}
+.nav .navBar .navMenu .listItem a:hover{
+    cursor: url('images/try8.svg'), auto;
+}
+.nav .navBar .navMenu .listItem a:hover::after{
+    width: 100%;
+    left: 0;
+}
+.home{
+    height: 100vh;
+    width: 100vw;
+    background: url(images/homebg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home .titleHolder{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .titleHolder .title{
+    font-family: "roleModel";
+    font-weight: 100;
+    color: #FFFFF7;
+    font-size: 10rem;
+    display: inline-block;
+    user-select: none;
+    animation: reveal 3s ease forwards;
+    opacity: 1;
+    transition: .6s ease-in-out;
+}
+.home .titleHolder .title.sticky{
+    opacity: 0;
+}
+@keyframes reveal {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #fff; 
+        transform: translateY(0);
+    }
+}
+
+#section1{
+    width: 100vw;
+    height: 100vh;
+    background: url(images/backgrounds1.gif);
+}
+#section1 .info{
+    width: 40%;
+    height: 100%;
+    background: #202020;
+}
+#section1 .info .empty{
+    width: 100%;
+    height: 35%;
+}
+#section1 .info .section1Title{
+    height: 10%;
+    padding-left: 10%;
+}
+#section1 .info .section1Title h1{
+    color: #000;
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #FFFFF7;
+    user-select: none;
+}
+#section1 .info .section1Title h2{
+    color: #000;
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #FFFFF7;
+    user-select: none;
+}
+#section1 .info .oops{
+    display: flex;
+    width: 100%;
+    height: 55%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#section1 .info .oops a{
+    color: #fffff7;
+    padding-left: 10%;
+    padding-bottom: 8%;
+    cursor: url('images/try8.svg'), auto;
+    z-index: 2;
+}
+#section1 .info .section1Text{
+    width: 45%;
+    padding-right: 8%;
+    padding-bottom: 8%;
+}
+#section1 .info .section1Text p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #FFFFF7;
+    line-height: 1.5;
+    user-select: none;
+    font-size: 1rem;
+}
+
+#section2{
+    width: 100vw;
+    height: 100vh;
+    background: url(images/backgrounds2.gif);
+}
+#section2 .info .empty{
+    width: 100%;
+    height: 15%;
+}
+#section2 .info{
+    width: 40%;
+    height: 100%;
+    background: #202020;
+    position: absolute;
+    right: 0;
+}
+#section2 .info .section2Title{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 10%;
+    padding-right: 10%;
+}
+#section2 .info .section2Title h1{
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #FFFFF7;
+    user-select: none;
+}
+#section2 .info .section2Title h2{
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #FFFFF7;
+    user-select: none;
+}
+#section2 .info .section2Text{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#section2 .info .section2Text p{
+    width: 70%;
+    padding: 10%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #FFFFF7;
+    user-select: none;
+    font-size: 1rem;
+}
+#section2 .arrow{
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+#section2 .arrow a{
+    color: #fffff7;
+    padding-left: 10%;
+    padding-bottom: 8%;
+    cursor: url('images/try8.svg'), auto;
+    z-index: 2;
+}
+
+#section3{
+    width: 100vw;
+    height: 100vh;
+    background: url(images/backgrounds3.gif);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section3 .actualMain{
+    width: 70%;
+    height: 76%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#section3 .actualMain h1{
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 3.5rem;
+    margin: 0;
+    color: #FFFFF7;
+    height: 20%;
+    user-select: none;
+}
+#section3 .actualMain .section3Main{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#section3 .actualMain .section3Main .section3Pod{
+    width: 20%;
+    height: 70%;
+    background: #202020;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgba(252,194,61,1);
+}
+#section3 .actualMain .section3Main .section3Pod h1{
+    font-family: "roleModel";
+    font-weight: 200;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin: 0;
+    height: auto;
+    user-select: none;
+}
+#section3 .actualMain .section3Main .section3Pod p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    font-style: normal;
+    color: #FFFFF7;
+    margin: 0;
+    line-height: 1.5;
+    user-select: none;
+}
+
+@media only screen and (max-width: 1500px) {
+    #section1 .info .section1Text p{
+        font-size: 1vw;
+    }
+}
+@media only screen and (max-width: 1700px){
+    #section2 .info .section2Text p{
+        font-size: 1vw;
+    }
+    #section3 .actualMain .section3Main .section3Pod p{
+        font-size: .8vw;
+    }
+}
